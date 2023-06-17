@@ -1,7 +1,12 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  const booksObject = fetch("https://anapioficeandfire.com/api/books")
+  .then((resp) => resp.json())
+  .then((json) => renderBooks(json));
+  return booksObject ;
 }
+// To pass the tests, don't forget to return your fetch!
+// it should call the second function, renderBooks(), 
+// passing in the JSON-ified data as the argument.
 
 function renderBooks(books) {
   const main = document.querySelector('main');
